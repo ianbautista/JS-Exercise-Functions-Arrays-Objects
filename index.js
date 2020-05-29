@@ -241,9 +241,10 @@ function get3rdCar(inventory) {
  */
 function getCarInfoByIndex(inventory, index) {
 	/* code here */
-	const
-	return `The is a ${the3rd.car_make} ${the3rd.car_model}`;
+	const carChoice = inventory[index];
+	return `The is a ${carChoice.car_make} ${carChoice.car_model}`;
 }
+getCarInfoByIndex(inventory, 0);
 
 /**
  * ### Challenge `getLastCarInfo`
