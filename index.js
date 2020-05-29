@@ -37,7 +37,7 @@ function addNumbers(num1, num2) {
 function sayGoodbye(name) {
 	return `Goodbye, ${name}. Have a great day.`;
 }
-sayGoodbye("Christian");
+sayGoodbye("Andy");
 
 /**
  * ### Challenge `temperatureCtoF`
@@ -140,13 +140,7 @@ function getName(getNameParam) {
 	getNameObject = getNameParam;
 	return `Hello, my name is ${getNameObject.name}`;
 }
-getName(
-	(getNameObject = {
-		id: 1,
-		name: "Leia",
-		email: "leia@leia.com",
-	}),
-);
+getName({ id: 1, name: "Leia", email: "leia@leia.com" });
 /**
  * ### Challenge `appleIndex`
  *
@@ -167,7 +161,7 @@ function appleIndex(appleIndexParam) {
 	let fruitStringsArray = appleIndexParam;
 	return `${fruitStringsArray.indexOf("apple")}`;
 }
-appleIndex((fruitStringsArray = ["orange", "grape", "apple", "banana", "mango"]));
+appleIndex(["orange", "grape", "apple", "banana", "mango"]);
 
 /**
  * ### Challenge `isItAnApple`
@@ -184,9 +178,17 @@ appleIndex((fruitStringsArray = ["orange", "grape", "apple", "banana", "mango"])
  * passing in [ 'orange', 'apple', 'banana', 'apples', 'apple', 'mango' ] as the argument,
  * the returned value should be: [ false, true, false, false, true, false ].
  */
-function isItAnApple(/* code here */) {
+function isItAnApple(isItAnAppleParam) {
 	/* code here */
+	isItAnAppleArray = isItAnAppleParam;
+	isItAnAppleArrayBoolean = [];
+
+	for (i = 0; i < isItAnAppleArray.length; i++) {
+		isItAnAppleArrayBoolean.push(isItAnAppleArray[i] === "apple");
+	}
+	return isItAnAppleArrayBoolean;
 }
+isItAnApple(["orange", "apple", "banana", "apples", "apple", "mango"]);
 
 // ⭐️ Example Test Data ⭐️
 
