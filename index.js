@@ -38,6 +38,8 @@ function sayGoodbye(name) {
 	return `Goodbye, ${name}. Have a great day.`;
 }
 
+sayGoodbye(Christian);
+
 /**
  * ### Challenge `temperatureCtoF`
  *
