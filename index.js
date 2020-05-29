@@ -158,7 +158,7 @@ getName({ id: 1, name: "Leia", email: "leia@leia.com" });
  */
 function appleIndex(appleIndexParam) {
 	/* code here */
-	let fruitStringsArray = appleIndexParam;
+	const fruitStringsArray = appleIndexParam;
 	return `${fruitStringsArray.indexOf("apple")}`;
 }
 appleIndex(["orange", "grape", "apple", "banana", "mango"]);
@@ -180,8 +180,8 @@ appleIndex(["orange", "grape", "apple", "banana", "mango"]);
  */
 function isItAnApple(isItAnAppleParam) {
 	/* code here */
-	isItAnAppleArray = isItAnAppleParam;
-	isItAnAppleArrayBoolean = [];
+	const isItAnAppleArray = isItAnAppleParam;
+	const isItAnAppleArrayBoolean = [];
 
 	for (i = 0; i < isItAnAppleArray.length; i++) {
 		isItAnAppleArrayBoolean.push(isItAnAppleArray[i] === "apple");
@@ -241,6 +241,8 @@ function get3rdCar(inventory) {
  */
 function getCarInfoByIndex(inventory, index) {
 	/* code here */
+	const
+	return `The is a ${the3rd.car_make} ${the3rd.car_model}`;
 }
 
 /**
