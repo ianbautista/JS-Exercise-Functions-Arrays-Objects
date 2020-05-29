@@ -37,8 +37,7 @@ function addNumbers(num1, num2) {
 function sayGoodbye(name) {
 	return `Goodbye, ${name}. Have a great day.`;
 }
-
-sayGoodbye(Christian);
+sayGoodbye("Christian");
 
 /**
  * ### Challenge `temperatureCtoF`
@@ -51,12 +50,16 @@ sayGoodbye(Christian);
  * passing 24 as the argument,
  * the returned value should be: 75
  *
- * Hint 1: The formula for converting celsius to fahrenheit is t*9/5 + 32 where t is the temperature in celsius.
+ * Hint 1: The formula for converting celsius to fahrenheit is t*9/5 + 32 where t is the temperature
+ * in celsius.
  * Hint 2: There is a very easy way to round numbers in JS. Do a google search to find out how.
  */
-function temperatureCtoF(/* code here */) {
+function temperatureCtoF(cDegree) {
 	/* code here */
+	const fDegree = (cDegree * 9) / 5 + 32;
+	return `${cDegree}C° is ${Math.round(fDegree)}F°`;
 }
+temperatureCtoF(24);
 
 /**
  * ### Challenge `temperatureInF`
@@ -75,9 +78,22 @@ function temperatureCtoF(/* code here */) {
  *
  * Hint: You can call your `temperatureCtoF` function from inside `temperatureInF`.
  */
-function temperatureInF(/* code here */) {
+function temperatureInF(tempValue, tempUnit) {
 	/* code here */
+	if (tempUnit === "C") {
+		const fDegree = (tempValue * 9) / 5 + 32;
+		tempUnit = "F";
+		console.log(`${Math.round(fDegree)}${tempUnit}`);
+	} else if (tempUnit === "F") {
+		const cDegree = ((tempValue - 32) * 5) / 9;
+		tempUnit = "C";
+		console.log(`${Math.round(cDegree)}${tempUnit}`);
+	} else {
+		console.log(`${tempUnit} is not a valid unit`);
+	}
 }
+temperatureInF(88, "F");
+temperatureInF(24, "C");
 
 /**
  * ### Challenge `makePersonObject`
@@ -95,9 +111,16 @@ function temperatureInF(/* code here */) {
  *   email: "leia@leia.com",
  * }
  */
-function makePersonObject(/* code here */) {
+function makePersonObject(personId, personName, personEmail) {
 	/* code here */
+	let personObject = {
+		id: personId,
+		name: personName,
+		email: personEmail,
+	};
+	return personObject;
 }
+makePersonObject(5, "Leia", "leia@leia.com");
 
 /**
  * ### Challenge `getName`
@@ -112,10 +135,18 @@ function makePersonObject(/* code here */) {
  * passing { id: 1, name: 'Leia', email: 'leia@leia.com` } as the argument,
  * the returned value should look like `Hello, my name is Leia`.
  */
-function getName(/* code here */) {
+function getName(getNameParam) {
 	/* code here */
+	getNameObject = getNameParam;
+	return `Hello, my name is ${getNameObject.name}`;
 }
-
+getName(
+	(getNameObject = {
+		id: 1,
+		name: "Leia",
+		email: "leia@leia.com",
+	}),
+);
 /**
  * ### Challenge `appleIndex`
  *
@@ -131,9 +162,12 @@ function getName(/* code here */) {
  * passing in [ 'orange', 'grape', 'apple', 'banana', 'mango' ] as the argument,
  * the returned value should be: 2.
  */
-function appleIndex(/* code here */) {
+function appleIndex(appleIndexParam) {
 	/* code here */
+	let fruitStringsArray = appleIndexParam;
+	return `${fruitStringsArray.indexOf("apple")}`;
 }
+appleIndex((fruitStringsArray = ["orange", "grape", "apple", "banana", "mango"]));
 
 /**
  * ### Challenge `isItAnApple`
