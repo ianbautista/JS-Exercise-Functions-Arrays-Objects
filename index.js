@@ -297,9 +297,13 @@ getModelYears(require("./data/inventory"));
  * For example, if getCarInfoById is invoked with the inventory and the number 1,
  * it will return `This is a Lincoln Navigator`.
  */
-function getCarInfoById(/* code here */) {
+function getCarInfoById(carInventory, carId) {
 	/* code here */
+	const data = carInventory;
+	return `This is a ${data.id[carId].car_make} ${data.id[carId].car_model}`;
 }
+
+getCarInfoById(require("./data/inventory"), 1);
 
 /**
  * ### Challenge `getOlderCars`
