@@ -277,7 +277,7 @@ function getModelYears(carInventory) {
 	const data = carInventory;
 	carYears = [];
 	for (let i = 0; i < data.length; i++) {
-		years.push(data[i].car_year);
+		carYears.push(data[i].car_year);
 	}
 	return carYears;
 }
